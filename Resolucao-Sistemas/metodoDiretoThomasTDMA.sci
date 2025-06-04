@@ -1,5 +1,4 @@
 clear(); clc()
-printf("*** Gabriel Costa de Moraes ***\n");
 printf("\n * MÉTODO DIRETO: THOMAS (TDMA) SISTEMAS TRIDIAGONAIS *\N")
 a = [0; -1; -1]
 b = [2; 2; 2]
