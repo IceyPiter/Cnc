@@ -1,6 +1,5 @@
 clear; clc; clf;
 
-printf("*** Gabriel Costa de Moraes ***\n");
 printf("*** MÉTODO DIRETO: GAUSS (ELIMINAÇÃO GAUSSIANA) SEM PIVOTEAMENTO ***\n\n");
 
 // Definindo a matriz A e o vetor B
