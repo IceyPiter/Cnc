@@ -1,5 +1,4 @@
 clear();clc();
-printf("*** Gabriel Costa de Moraes ***\n");
 printf("\n***** METODO DIRETO: FATORAÇÃO LU por CROUT****\n\n")
 
 // Definindo a matriz A e o vetor B
