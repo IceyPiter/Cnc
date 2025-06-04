@@ -1,6 +1,5 @@
 
 clear();clc();clf();
-printf("*** Gabriel Costa de Moraes ***\n");
 printf("\n **** MÉTODO GRÁFICO PARA ISOLAR AS RAÍZES DA FUNÇÃO ***** \n");
 printf("\n ************* EXEMPLO COM A FUNÇÃO PADRÃO *************** \n");
 x = -4:0.1:4
