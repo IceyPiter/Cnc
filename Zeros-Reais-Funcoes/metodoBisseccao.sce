@@ -1,6 +1,5 @@
 
 clear();clc();clf();
-printf("*** Gabriel Costa de Moraes ***\n");
 printf("*** APROXIMAÇÃO PELO MÉTODO DA BISSECÇÃO ***\n")
 
 deff('y = f(x)', 'y=x^3-9*x+3')
