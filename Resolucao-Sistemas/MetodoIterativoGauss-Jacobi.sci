@@ -1,5 +1,4 @@
 clear(); clc()
-printf("*** Gabriel Costa de Moraes ***\n");
 printf("\n * MÉTODO ITERATIVO: GAUSS-JACOBI (REORDENAÇÃO GULOSA)*\N")
 
 A = [0.1, 0.2, 1.0, 0.3; 
