@@ -10,7 +10,7 @@ x = -3:0.1:3
 y = x^2-3
 plot2d(x,y)
 xtitle("Gráfico de fx=x^2-3",...
-  "Valores do domínio [-3;3]",...
-  "Valores da função f")
+----"Valores do domínio [-3;3]",...
+----"Valores da função f")
 xgrid()</code>
 
