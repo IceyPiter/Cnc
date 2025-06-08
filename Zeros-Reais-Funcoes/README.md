@@ -2,8 +2,7 @@
 
 <b>Primeiro Método: "IsolarRaizesFuncao"</b>
 > Código: <
-<code>
-clear();clc();clf();
+<code>clear();clc();clf();
 printf("\n **** MÉTODO GRÁFICO PARA ISOLAR AS RAÍZES DA FUNÇÃO ***** \n");
 printf("\n ************* EXEMPLO COM A FUNÇÃO PADRÃO *************** \n");
 x = -3:0.1:3
