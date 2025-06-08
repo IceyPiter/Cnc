@@ -1,3 +1,4 @@
 <b>*Como Utilizar cada método da pasta de Zeros-Reais-Funções*</b>
 
-Primeiro Método: "IsolarRaizesFuncao"
+<b>Primeiro Método: "IsolarRaizesFuncao"</b>
+> Código
