@@ -88,7 +88,7 @@ for i = 1:n
         if j < n then
             printf("(%d*%.6f)+ ", A_original(i,j), X(j))
         else
-            printf("(%d*%.6f)+ ", A_original(i,j), X(j))
+            printf("(%d*%.6f)= ", A_original(i,j), X(j))
             printf("%.6f\n", s)
         end
     end
