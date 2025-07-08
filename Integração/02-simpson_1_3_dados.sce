@@ -7,9 +7,9 @@ function Simpson_1_3_Dados(X, Y, integral_exata)
     printf(" Fórmula: I ~ (h/3) * [f(x0) + 4*∑ impares + 2*∑ pares + f(xn)]\n");
     somatorio_pares = sum(Y(3:2:num_pontos-1));
     somatorio_impares = sum(Y(3:2:num_pontos-1));
-    integral_numerica = (h/3) * (Y(1) + 2*somatorio + 4*somatorio_pares + Y(num_pontos));
+    integral_numerica = (h/3) * (Y(1) + 2*somatorio_impares + 4*somatorio_pares + Y(num_pontos));
     printf("h = %f\n", h);
     printf(" Integral aproximada: %f\n", integral_numerica);
-    erro_percentual = abs((itegral_exata - integral_numerica) / integral_xata) * 100;
+    erro_percentual = abs((itegral_exata - integral_numerica) / integral_exata) * 100;
     printf(" Erro relativo percentual: %.6f %%\n", erro_percentual);
 endfunction
