@@ -2,7 +2,7 @@ function Trapezio_Funcao(f, x0, xn, n, integral_exata)
     h = (xn-x0)/n;
     soma_interna = 0;
     for i = 1:(n-1)
-        soam_interna = soma_interna + f(x0 + i*h)
+        soma_interna = soma_interna + f(x0 + i*h)
     end
     integral_numerica = (h/2) * (f(x0) + 2*soma_interna + f(xn));
     printf("\n////////////////////////////////////////////////////\n");
