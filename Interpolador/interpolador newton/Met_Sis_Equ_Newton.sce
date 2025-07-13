@@ -1,0 +1,87 @@
+
+///
+/// interploação polinomial por NEWTON ver. modularizada
+//
+// ============== limap variáveis, console e saída gráfica ====
+clc(); clear(); clf();
+
+printf("Antes: %s\n", pwd());
+printf("\n** Interpolação pelo método de newton - Ver. Modularizada ** \n")
+
+exec("C:\Users\Fabiano\OneDrive\Documentos\CNC\Trabalho 2\interpolador newton\dif_divididas.sce", -1)
+exec("C:\Users\Fabiano\OneDrive\Documentos\CNC\Trabalho 2\interpolador newton\newton_poly.sce", -1)
+exec("C:\Users\Fabiano\OneDrive\Documentos\CNC\Trabalho 2\interpolador newton\avaliar_polinomio.sce", -1)
+exec("C:\Users\Fabiano\OneDrive\Documentos\CNC\plotar_interpolador2.sce", -1)
+//===
+//[1] entrada de variáveis
+// ===
+// ==================================PROBLEMA 1==================================
+//X = [0, 1, 3, 6]
+//Y = [0, 95, 260, 510]
+// ==================================PROBLEMA 1==================================
+
+// ==================================PROBLEMA 4==================================
+//X = [100, 200, 400, 800]
+//Y = [30.5, 45, 70.2, 120]
+// ==================================PROBLEMA 4==================================
+
+// ==================================PROBLEMA 10==================================
+X = [0, 10, 20, 40]
+Y = [22, 28, 31, 30]
+// ==================================PROBLEMA 10==================================
+
+n = length(X)
+
+printf("\n[1] Tabela de dados:\n")
+for i = 1:n
+    printf("  x = %.6f; f(x) = %.6f\n", X(i), Y(i))
+end
+// ===
+// [2] cálculo dosw coeficientes via diferenças divididas
+// ===
+coef = dif_divididas(X, Y)
+
+printf("\n[2] coeficientes das diferenças divididas:\n")
+for i = 1:n
+    printf("   a_%d = %.6f\n", i-1, coef(i))
+end
+// ===
+// [3] construção do polinômio de newton
+// ===
+PolNewton = newton_poly(X, coef)
+
+printf("\n[3] Polinômio interpolador por newton:\n")
+disp(PolNewton)
+// ===
+// [4] Avaliação do polinômio em um ponto específico
+// ===
+deff('y = f(x)',   ['y = horner(PolNewton, x)']) //definição da função para testar o ponto
+
+// ==================================PROBLEMA 1==================================
+//pontos = [2.0, 4.0, 5.0]
+// ==================================PROBLEMA 1==================================
+
+
+// ==================================PROBLEMA 4==================================
+//pontos = [300, 600]
+// ==================================PROBLEMA 4==================================
+
+// ==================================PROBLEMA 10==================================
+pontos = [15, 30]
+// ==================================PROBLEMA 10==================================
+
+for k=1:length(pontos)
+    xi = pontos(k)
+    valor_real = f(xi)
+    [valor_aprox, erro_percentual] = avaliar_polinomio(PolNewton, xi, valor_real)
+    printf("\n[4] Valor aproximado: p(%.2f) = %.6f\n", xi, valor_aprox)
+    printf("[5] Erro percentual: %.4f%%\n", erro_percentual)
+end
+// ===
+// [5] Gráfico do polinomio interpolador
+// ===
+plotar_interpolador(X, Y, PolNewton, pontos)
+
+//
+printf("\n********** Fim de interpolação por newton **********\n")
+///////////////////////////////////////////////////////////////////////////////
