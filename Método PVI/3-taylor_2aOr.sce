@@ -10,7 +10,7 @@ function [x, y] = taylor_2a_ordem(f, df, x0, y0, h, n)
     end
 endfunction
 
-/* TESTE COM EXEMPLO
+
 function dy = f(x, y)
     dy = x - 2*y
 endfunction
@@ -41,4 +41,4 @@ printf("=============================================================\n")
 
 exec("6-plotar_resultados.sce", -1)
 plotar_resultado_aproximado(x, y, [], "Métod0 de Taylor de 2ª Ordem", "Variável independente", "Solução aproximada y(x)")
-*/
+
