@@ -10,7 +10,7 @@ function [x, y] = taylor_2a_ordem(f, df, x0, y0, h, n)
     end
 endfunction
 
-
+/* TESTE COM EXEMPLO
 function dy = f(x, y)
     dy = x - 2*y
 endfunction
@@ -27,18 +27,18 @@ n = int((b - a) / h)
 [x, y] = taylor_2a_ordem(f, df, x0, y0, h, n)
 
 printf("\n")
-printf("=============================================================\n")
-printf("    MÉTOD0 DE TAYLOR DE 2ª ORDEM - APROXIMAÇÕES NUMÉRICAS\n")
-printf("=============================================================\n")
-printf("         i         x(i)         y(i)\n")
-printf("-------------------------------------------------------------\n")
+printf("============================================================\n")
+printf("    MÉT0DO DE TAYLOR DE 2ª ORDEM - APROXIMAÇÕES NUMÉRICAS\n")
+printf("============================================================\n")
+printf("            i              x(i)              y(i)\n")
+printf("------------------------------------------------------------\n")
 for i = 1:(n+1)
-    mprintf("  %3d     %9.4f     %9.6f\n", i-1, x(i), y(i))
+    mprintf("          %3d          %9.4f          %9.6f\n", i-1, x(i), y(i))
 end
-printf("-------------------------------------------------------------\n")
+printf("------------------------------------------------------------\n")
 printf("  Aproximação final: y(%.1f) ≈ %.6f\n", x($), y($))
-printf("=============================================================\n")
+printf("============================================================\n")
 
 exec("6-plotar_resultados.sce", -1)
-plotar_resultado_aproximado(x, y, [], "Métod0 de Taylor de 2ª Ordem", "Variável independente", "Solução aproximada y(x)")
-
+plotar_resultado_aproximado(x, y, [], "Mét0do de Taylor de 2ª Ordem", "Variável independente", "Solução aproximada y(x)")
+*/
