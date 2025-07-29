@@ -1,11 +1,11 @@
 clear(); clc()
 
-exec("C:\Users\Pedro.Michalski\Downloads\Método PVI\1-euler_1aOr.sce", -1)
-exec("C:\Users\Pedro.Michalski\Downloads\Método PVI\2-euler_1aMOD.sce", -1)
-exec("C:\Users\Pedro.Michalski\Downloads\Método PVI\3-taylor_2aOr.sce", -1)
-exec("C:\Users\Pedro.Michalski\Downloads\Método PVI\4-RK3_3aOr.sce", -1)
-exec("C:\Users\Pedro.Michalski\Downloads\Método PVI\5-RK4_4aOr.sce", -1)
-exec("C:\Users\Pedro.Michalski\Downloads\Método PVI\6-plotar_resultados.sce", -1)
+exec("C:\Users\Pedro.Michalski\Downloads\Cnc\Método PVI\1-euler_1aOr.sce", -1)
+exec("C:\Users\Pedro.Michalski\Downloads\Cnc\Método PVI\2-euler_1aMOD.sce", -1)
+exec("C:\Users\Pedro.Michalski\Downloads\Cnc\Método PVI\3-taylor_2aOr.sce", -1)
+exec("C:\Users\Pedro.Michalski\Downloads\Cnc\Método PVI\4-RK3_3aOr.sce", -1)
+exec("C:\Users\Pedro.Michalski\Downloads\Cnc\Método PVI\5-RK4_4aOr.sce", -1)
+exec("C:\Users\Pedro.Michalski\Downloads\Cnc\Método PVI\6-plotar_resultados.sce", -1)
 
 // Problema 1
 //a = 0.0; b = 1.0;
@@ -15,12 +15,13 @@ exec("C:\Users\Pedro.Michalski\Downloads\Método PVI\6-plotar_resultados.sce", -
 // Problema 4
 a = 0.0; b = 10.0;
 x0 = a; y0 = 80;
+k = 0.1; Tmax = 200;
 
 h = 0.1 // mudar conforme problemas
 n = int((b - a) / h)
 
 //Problema 1
-/*function dy = f(x,y)
+function dy = f(x,y)
     dy = k*(Tmax-y);
 endfunction
 
@@ -31,7 +32,6 @@ endfunction
 function yex = y_exata(x)
     yex = Tmax-(Tmax-y0)*exp(-k*x);
 endfunction
-*/
 
 // Problema 4
 function dy = f(x,y)
@@ -39,11 +39,11 @@ function dy = f(x,y)
 endfunction
 
 function d2y = df(x,y)
-    d2y = -0.1*(-0.1*(y-20))
+    d2y = 0.01(y-20)
 endfunction
 
 function yex = y_exata(x)
-    yex = 20+60*exp(-0.1*x);
+    yex = Tmax-(Tmax-y0)*exp(-k*x);
 endfunction
 
 [x1, y1] = euler_1a_ordem(f, x0, y0, h, n)
